@@ -7,6 +7,7 @@ let result = document.querySelector(".result");
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
+const again = document.querySelector(".play-again");
 
 function newGame(){
     userScore = 0;
@@ -34,14 +35,10 @@ function lose(player, computer){
 
     if(userScore == 5){
         result.innerHTML = "YOU WON THE GAME!!";
-        const playAgain = document.createElement('button')
-        loseres.append(playAgain);
         newGame();
     }
     else if (computerScore == 5){
-        result.innerHTML = "YOU LOST THE GAME!!"
-        const playAgain = document.createElement('button')
-        loseres.append(playAgain);
+        result.innerHTML = "YOU LOST THE GAME!!";
         newGame();
     }
     
@@ -61,17 +58,11 @@ function win(player, computer){
     setTimeout(() => winan.classList.remove('win'), 200);
 
     if(userScore == 5){
-        result.innerHTML = "YOU WON THE GAME!!"
-        const playAgain = document.createElement('button')
-        playAgain.id = 'again';
-        playAgain.innerHTML = "Play again?";
-        winres.append(playAgain);
+        result.innerHTML = "YOU WON THE GAME!!";
         newGame();
     }
     else if (computerScore == 5){
         result.innerHTML = "YOU LOST THE GAME!!"
-        const playAgain = document.createElement('button')
-        winres.append(playAgain);
         newGame();
     }
 }   
